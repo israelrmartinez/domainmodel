@@ -19,13 +19,14 @@ public struct Money {
         currency = curr
     }
     
-    func convert(_ curr: String) -> Int {
+    func convert(_ curr: String) -> Money {
         var newMoney: Double = Double(amount)
         if curr == "GBP" {
             newMoney *= (0.5 / 2)
         }
+        let newAmount = Int(newMoney)
         print(newMoney)
-        return Int(newMoney)
+        return Money(amount: newAmount, currency: curr)
     }
     
     func add() {

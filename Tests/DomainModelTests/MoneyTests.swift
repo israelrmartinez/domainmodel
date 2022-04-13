@@ -19,11 +19,11 @@ class MoneyTests: XCTestCase {
     XCTAssert(tenGBP.currency == "GBP")
   }
   
-//  func testUSDtoGBP() {
-//    let gbp = tenUSD.convert("GBP")
-//    XCTAssert(gbp.currency == "GBP")
-//    XCTAssert(gbp.amount == 5)
-//  }
+  func testUSDtoGBP() {
+    let gbp = tenUSD.convert("GBP")
+    XCTAssert(gbp.currency == "GBP")
+    XCTAssert(gbp.amount == 5)
+  }
 //  func testUSDtoEUR() {
 //    let eur = tenUSD.convert("EUR")
 //    XCTAssert(eur.currency == "EUR")
