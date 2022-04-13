@@ -23,6 +23,10 @@ public struct Money {
         var newMoney: Double = Double(amount)
         if curr == "GBP" {
             newMoney *= (0.5 / 2)
+        } else if curr == "EUR" {
+            newMoney *= (1.5 / 2)
+        } else if curr == "CAN" {
+            newMoney *= (1.25 / 4)
         }
         let newAmount = Int(newMoney)
         print(newMoney)

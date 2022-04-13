@@ -24,16 +24,16 @@ class MoneyTests: XCTestCase {
     XCTAssert(gbp.currency == "GBP")
     XCTAssert(gbp.amount == 5)
   }
-//  func testUSDtoEUR() {
-//    let eur = tenUSD.convert("EUR")
-//    XCTAssert(eur.currency == "EUR")
-//    XCTAssert(eur.amount == 15)
-//  }
-//  func testUSDtoCAN() {
-//    let can = twelveUSD.convert("CAN")
-//    XCTAssert(can.currency == "CAN")
-//    XCTAssert(can.amount == 15)
-//  }
+  func testUSDtoEUR() {
+    let eur = tenUSD.convert("EUR")
+    XCTAssert(eur.currency == "EUR")
+    XCTAssert(eur.amount == 15)
+  }
+  func testUSDtoCAN() {
+    let can = twelveUSD.convert("CAN")
+    XCTAssert(can.currency == "CAN")
+    XCTAssert(can.amount == 15)
+  }
 //  func testGBPtoUSD() {
 //    let usd = fiveGBP.convert("USD")
 //    XCTAssert(usd.currency == "USD")
