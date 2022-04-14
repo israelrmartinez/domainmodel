@@ -73,8 +73,26 @@ public struct Money {
         return newMoney
     }
     
-    func subtract() {
+    func subtract(_ mon: Money) -> Money {
+        var newMoney: Money = mon
+        if currency != "USD" {
+            newMoney = mon.convert("USD")
+            if mon.currency == "GBP" {
+                newMoney.amount -= mon.amount
+                newMoney.currency = "GBP"
+            } else if mon.currency == "EUR" {
+                newMoney.amount -= mon.amount
+                newMoney.currency = "GBP"
+            } else {
+                newMoney.amount -= mon.amount
+                newMoney.currency = "CAN"
+            }
+            return newMoney
+        }
+        newMoney.amount -= mon.amount
+        newMoney.currency = "USD"
         
+        return newMoney
     }
 }
 
