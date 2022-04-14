@@ -101,8 +101,8 @@ public struct Money {
 // Job
 //
 public class Job {
-    let title: String
-    let type: JobType
+    var title: String
+    var type: JobType
     
     init(title: String, type: JobType) {
         self.title = title
@@ -155,6 +155,21 @@ public class Job {
 // Person
 //
 public class Person {
+    var firstName: String
+    var lastName: String
+    var age: Int
+    var job: Job?
+    var spouse: Person?
+    
+    init(firstName: String, lastName: String, age: Int) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.age = age
+    }
+    
+    func toString() -> String {
+        return String("[Person: firstName: \(firstName) lastName: \(lastName) age: \(age) job: \(job) spouse: \(spouse)]")
+    }
 }
 
 ////////////////////////////////////
