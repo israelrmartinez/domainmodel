@@ -123,8 +123,31 @@ public class Job {
         }
     }
     
-    func raise(byAmount: Int) {
-        // type =
+    func raise(byAmount: Int) -> Int {
+        switch type {
+        case .Hourly(let double):
+            return Int(double) * byAmount
+        case .Salary(let UInt):
+            return Int(UInt) + byAmount
+        }
+    }
+    
+    func raise(byAmount: Double) -> Int {
+        switch type {
+        case .Hourly(let double):
+            return Int(double) * Int(byAmount)
+        case .Salary(let UInt):
+            return Int(UInt) + Int(byAmount)
+        }
+    }
+    
+    func raise(byPercent: Double) -> Int {
+        switch type {
+        case .Hourly(let double):
+            return Int(double) * Int(1 + byPercent)
+        case .Salary(let UInt):
+            return Int(UInt) * Int(1 + byPercent)
+        }
     }
 }
 
