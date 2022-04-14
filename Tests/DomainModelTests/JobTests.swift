@@ -1,20 +1,20 @@
-//import XCTest
-//@testable import DomainModel
-//
-//class JobTests: XCTestCase {
-//  
-//    func testCreateSalaryJob() {
-//        let job = Job(title: "Guest Lecturer", type: Job.JobType.Salary(1000))
-//        XCTAssert(job.calculateIncome(50) == 1000)
-//        XCTAssert(job.calculateIncome(100) == 1000)
-//        // Salary jobs pay the same no matter how many hours you work
-//    }
-//
-//    func testCreateHourlyJob() {
-//        let job = Job(title: "Janitor", type: Job.JobType.Hourly(15.0))
-//        XCTAssert(job.calculateIncome(10) == 150)
-//        XCTAssert(job.calculateIncome(20) == 300)
-//    }
+import XCTest
+@testable import DomainModel
+
+class JobTests: XCTestCase {
+  
+    func testCreateSalaryJob() {
+        let job = Job(title: "Guest Lecturer", type: Job.JobType.Salary(1000))
+        XCTAssert(job.calculateIncome(50) == 1000)
+        XCTAssert(job.calculateIncome(100) == 1000)
+        // Salary jobs pay the same no matter how many hours you work
+    }
+
+    func testCreateHourlyJob() {
+        let job = Job(title: "Janitor", type: Job.JobType.Hourly(15.0))
+        XCTAssert(job.calculateIncome(10) == 150)
+        XCTAssert(job.calculateIncome(20) == 300)
+    }
 //
 //    func testSalariedRaise() {
 //        let job = Job(title: "Guest Lecturer", type: Job.JobType.Salary(1000))
@@ -44,4 +44,4 @@
 //        ("testSalariedRaise", testSalariedRaise),
 //        ("testHourlyRaise", testHourlyRaise),
 //    ]
-//}
+}

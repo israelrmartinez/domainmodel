@@ -15,8 +15,8 @@ public struct Money {
     var currency: String
     
     init(amount am: Int, currency curr: String) {
-        amount = am
-        currency = curr
+        self.amount = am
+        self.currency = curr
     }
     
     func convert(_ curr: String) -> Money {
@@ -96,9 +96,6 @@ public struct Money {
     }
 }
 
-//let mon = Money(amount: 4, currency: "USD")
-//print(mon.convert("GBP"))
-
 
 ////////////////////////////////////
 // Job
@@ -118,14 +115,12 @@ public class Job {
     }
     
     func calculateIncome(_ time: Int) -> Int {
-//        switch type {
-//        case .Hourly(let double):
-//            return double * time
-//        }
-//        case .Salary(let UInt) {
-//            return Int(UInt)
-//        }
-        return time
+        switch type {
+        case .Hourly(let double):
+            return Int(double) * time
+        case .Salary(let UInt):
+            return Int(UInt)
+        }
     }
     
     func raise(byAmount: Int) {
