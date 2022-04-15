@@ -149,6 +149,12 @@ public class Job {
             return Int(UInt) * Int(1 + byPercent)
         }
     }
+    
+    func convert() -> Job {
+        let newJob = Job(title: title, type: Job.JobType.Salary(2000))
+        
+        return newJob
+    }
 }
 
 ////////////////////////////////////
