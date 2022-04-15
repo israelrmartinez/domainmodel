@@ -45,8 +45,8 @@ class FamilyTests : XCTestCase {
 
         let family = Family(spouse1: ted, spouse2: charlotte)
 
-//        let familyIncome = family.householdIncome()
-//        XCTAssert(familyIncome == 1000)
+        let familyIncome = family.householdIncome()
+        XCTAssert(familyIncome == 1000)
     }
 //
     func testFamilyWithKids() {
@@ -64,12 +64,12 @@ class FamilyTests : XCTestCase {
         let _ = family.haveChild(mike)
         let _ = family.haveChild(matt)
 
-//        let familyIncome = family.householdIncome()
-//        XCTAssert(familyIncome == 12000)
+        let familyIncome = family.householdIncome()
+        XCTAssert(familyIncome == 12000)
     }
-//  
-//    static var allTests = [
-//        ("testFamily", testFamily),
-//        ("testFamilyWithKids", testFamilyWithKids),
-//    ]
+  
+    static var allTests = [
+        ("testFamily", testFamily),
+        ("testFamilyWithKids", testFamilyWithKids),
+    ]
 }

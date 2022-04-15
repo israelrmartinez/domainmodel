@@ -196,14 +196,11 @@ public class Family {
     }
     
     func householdIncome() -> Int {
-        var index: Int = 0
-        var incomeTotal: Int = 0
-        repeat {
-//            let income = members[index].job?.type
-//            let income = job
-//            incomeTotal += income
-            index += 1
-        } while index < members.count
-        return 1
+        var totalIncome = 0
+        for person in members {
+            let annualIncome = person.job?.calculateIncome(2000) ?? 0
+            totalIncome += annualIncome
+        }
+        return totalIncome
     }
 }
