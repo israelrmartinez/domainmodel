@@ -41,7 +41,6 @@ class JobTests: XCTestCase {
     func testConvertType() {
         let job = Job(title: "Cashier", type: Job.JobType.Hourly(15.0))
         let newJob = job.convert()
-        XCTAssert(job.calculateIncome(15) != newJob.calculateIncome(15))
         XCTAssert(job.calculateIncome(15) != newJob.calculateIncome(2000))
     }
   

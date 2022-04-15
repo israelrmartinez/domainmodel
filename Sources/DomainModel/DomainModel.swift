@@ -173,6 +173,18 @@ public class Person {
         self.age = age
     }
     
+    init(firstName: String, age: Int) {
+        self.firstName = firstName
+        self.lastName = ""
+        self.age = age
+    }
+    
+    init(lastName: String, age: Int) {
+        self.firstName = ""
+        self.lastName = lastName
+        self.age = age
+    }
+    
     func toString() -> String {
         return String("[Person: firstName: \(firstName) lastName: \(lastName) age: \(age) job: \(job) spouse: \(spouse)]")
     }
