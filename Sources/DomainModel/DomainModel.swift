@@ -51,8 +51,41 @@ public struct Money {
         }
     }
     
-    func add() {
+    func add(_ mon: Money) -> Money {
+        var newMoney: Money = mon
+        if currency == "USD" {
+            if mon.currency == "GBP" {
+                newMoney = self.convert("GBP")
+                newMoney.amount += mon.amount
+                newMoney.currency = "GBP"
+            } else if mon.currency == "EUR" {
+                newMoney = self.convert("EUR")
+                newMoney.amount += mon.amount
+                newMoney.currency = "EUR"
+            } else if mon.currency == "CAN" {
+                newMoney = self.convert("EUR")
+                newMoney.amount += mon.amount
+                newMoney.currency = "CAN"
+            } else {
+                newMoney.amount += self.amount
+            }
+            return newMoney
+        }
+        let gbpMoney = mon.convert("GBP")
+        let eurMoney = mon.convert("EUR")
+        let canMoney = mon.convert("CAN")
         
+        if currency == "GBP" {
+            return gbpMoney
+        } else if currency == "EUR" {
+            return eurMoney
+        } else {
+            return canMoney
+        }
+//        newMoney.amount += mon.amount
+//        newMoney.currency = "USD"
+//
+//        return newMoney
     }
     
     func subtract() {
