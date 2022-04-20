@@ -83,7 +83,6 @@ class MoneyTests: XCTestCase {
 
     static var allTests = [
         ("testCanICreateMoney", testCanICreateMoney),
-
         ("testUSDtoGBP", testUSDtoGBP),
         ("testUSDtoEUR", testUSDtoEUR),
         ("testUSDtoCAN", testUSDtoCAN),
