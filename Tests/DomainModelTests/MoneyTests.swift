@@ -94,7 +94,7 @@ class MoneyTests: XCTestCase {
         ("testUSDtoCANtoUSD", testUSDtoCANtoUSD),
 
         ("testAddUSDtoUSD", testAddUSDtoUSD),
-        ("testAddUSDtoGBP", testAddUSDtoGBP),
+        ("testAddUSDtoGBP", testAddUSDtoGBP)
     ]
 }
 
