@@ -21,20 +21,20 @@ public struct Money {
     
     func convert(_ curr: String) -> Money {
         var newMoney: Double = Double(amount)
-        let gbpToUsd = Int((0.25 * 2) * newMoney)
-        let eurToUsd = Int((2 * 1.5) * newMoney)
-        let canToUsd = Int((4 * 1.25) * newMoney)
+        let gbpToUsd = Int(newMoney / 0.5)
+        let eurToUsd = Int(newMoney / 1.5)
+        let canToUsd = Int(newMoney / 1.25)
         var gbpMoney: Money
         var eurMoney: Money
         var canMoney: Money
         
         if curr != "USD" {
             if curr == "GBP" {
-                newMoney *= (0.5 / 2)
+                newMoney *= 0.5
             } else if curr == "EUR" {
-                newMoney *= (1.5 / 2)
+                newMoney *= 1.5
             } else if curr == "CAN" {
-                newMoney *= (1.25 / 4)
+                newMoney *= 1.25
             }
             let newAmount = Int(newMoney)
             return Money(amount: newAmount, currency: curr)
